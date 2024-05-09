@@ -4,13 +4,14 @@ import requests
 app = Flask(__name__)
 
 # Configuration variables
+mail_enabled = os.environ.get("MAIL_ENABLED", default="true")
 app.config['CLIENT_ID'] = ''
 app.config['CLIENT_SECRET'] = ''
 app.config['CALLBACK_URL'] = 'http://localhost:8080/api/auth/callback'
 app.config['SCOPES'] = 'data:read viewables:read'
 
 @app.route('/')
-def hello():
+def redirect():
     return redirect(f"https://developer.api.autodesk.com/authentication/v2/authorize?response_type=code&client_id={app.config['CLIENT_ID']}&redirect_uri={app.config['CALLBACK_URL']}&scope={app.config['SCOPES']}")
 
 @app.route('/api/auth/callback', methods=['POST','GET'])
