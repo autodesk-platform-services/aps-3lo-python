@@ -4,18 +4,19 @@ Minimal sample to obtain 3LO using python
 
 ## Setup
 
-Replace the configuration variables with your own:
+Replace the configuration variables in the .env file with your own:
 
 ```
-app.config['CLIENT_ID'] = 'YOUR CLIENT ID'
-app.config['CLIENT_SECRET'] = 'YOUR CLIENT SECRET'
-app.config['CALLBACK_URL'] = 'http://localhost:8080/api/auth/callback'
-app.config['SCOPES'] = 'data:read viewables:read'
+CLIENT_ID=''
+CLIENT_SECRET=''
+CALLBACK_URL='http://localhost:8080/api/auth/callback'
+SCOPES='data:read viewables:read'
 ```
 
 install flask and requests in your environment:
 `pip install flask`
 `pip install requests`
+`pip install python-dotenv`
 
 Run the app:
 `python app.py`
