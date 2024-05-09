@@ -14,8 +14,11 @@ SCOPES='data:read viewables:read'
 ```
 
 install flask and requests in your environment:
+
 `pip install flask`
+
 `pip install requests`
+
 `pip install python-dotenv`
 
 Run the app:
